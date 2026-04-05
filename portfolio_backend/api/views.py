@@ -14,7 +14,7 @@ class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
-api_view(['GET'])
+@api_view(['GET'])
 def project_list(request):
     return Response({"message": "Projects working ✅"})
 
