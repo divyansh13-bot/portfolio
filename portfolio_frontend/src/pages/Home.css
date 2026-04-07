@@ -1,0 +1,137 @@
+.home {
+  height: 100vh;
+  background: url("../assets/background1.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔥 Background blur overlay */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+/* MAIN CONTENT */
+.overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 50px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+
+  animation: fadeIn 1.5s ease;
+}
+
+/* 🔥 Heading animation */
+.overlay h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  animation: slideDown 1s ease;
+}
+
+/* 🔥 Subtitle */
+.overlay p {
+  font-size: 18px;
+  opacity: 0.8;
+  animation: fadeIn 2s ease;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 25px;
+}
+
+/* Modern buttons */
+button {
+  margin: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+
+  background: linear-gradient(135deg, #ffffff, #dcdcdc);
+  color: black;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔥 Hover effect */
+button:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg, #ff4d4d, #990000);
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+/* 🔥 Click effect */
+button:active {
+  transform: scale(0.95);
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 25px;
+  }
+
+  .overlay h1 {
+    font-size: 24px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+/* 💻 TABLET */
+@media (max-width: 1024px) {
+  .overlay h1 {
+    font-size: 30px;
+  }
+
+  .overlay {
+    padding: 35px;
+  }
+}
