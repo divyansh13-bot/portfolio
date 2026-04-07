@@ -1,6 +1,7 @@
-import React from "react";
-import css from "./Home.css";
-import Projects from "./Projects";
+// import eReact from "react";
+// import css from "./Home.css";
+// import Projcts from "./Projects";
+import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
